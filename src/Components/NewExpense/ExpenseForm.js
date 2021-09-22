@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   //using mutiple states
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -53,7 +53,10 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate), //we construct a new date coz what we receive from the input is  a string
     };
-    console.log(expenseData);
+
+    //instead of logging the expense data we call the onSaveExpenseData function
+    // console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
 
     // here when the form is submitted we can setEnteredTitle() and
     // set it to an empty string
