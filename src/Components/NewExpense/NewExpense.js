@@ -9,7 +9,8 @@ const NewExpense = (props) => {
       id: Math.random().toString(),
     };
 
-    // instead of just logging we call onAddExpense
+    // instead of just logging we call onAddExpense, will pass our
+    // expense data to our parent component which is APP.js
     // console.log(expenseData);
     props.onAddExpense(expenseData);
   };

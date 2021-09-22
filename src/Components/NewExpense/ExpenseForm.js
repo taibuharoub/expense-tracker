@@ -55,6 +55,7 @@ const ExpenseForm = (props) => {
     };
 
     //instead of logging the expense data we call the onSaveExpenseData function
+    //which will pass our expense data to the parent component
     // console.log(expenseData);
     props.onSaveExpenseData(expenseData);
 
