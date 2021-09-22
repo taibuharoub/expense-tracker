@@ -3,39 +3,47 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
   //using mutiple states
-  // const [enteredTitle, setEnteredTitle] = useState("");
-  // const [enteredAmount, setEnteredAmount] = useState("");
-  // const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
   //using one state, manually manage other states
-  const [userInput, setUserInput] = useState({
+  /* const [userInput, setUserInput] = useState({
     enteredTitle: "",
     enteredAmount: "",
     enteredDate: "",
-  });
+  }); */
 
   const titleChangerHandler = (event) => {
     // console.log(event.target.value);
-    // setEnteredTitle(event.target.value);
-    setUserInput({
+    setEnteredTitle(event.target.value);
+
+    /* setUserInput({
       ...userInput, //do this first, manually mananging other states
       enteredTitle: event.target.value,
-    });
+    }); */
+
+    //better alternative to the above for updating state that depends on the pervious state
+    //pass a function to the state  updating function,and then return the
+    //new state
+    /* setUserInput((pervState) => {
+      return { ...pervState, enteredTitle: event.target.value };
+    }); */
   };
 
   const amountChangeHandler = (event) => {
-    // setEnteredAmount(event.target.value);
-    setUserInput({
+    setEnteredAmount(event.target.value);
+    /* setUserInput({
       ...userInput, //do this first, manually mananging other states
       enteredAmount: event.target.value,
-    });
+    }); */
   };
   const dateChangeHandler = (event) => {
-    // setEnteredDate(event.target.value);
-    setUserInput({
+    setEnteredDate(event.target.value);
+    /* setUserInput({
       ...userInput, //do this first, manually mananging other states
       enteredDate: event.target.value,
-    });
+    }); */
   };
 
   return (
